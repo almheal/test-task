@@ -50,7 +50,7 @@
 <script>
 import Form from '@/components/Form'
 import Select from '@/components/Select'
-import {maxLength, minLength, email, numeric, required} from 'vuelidate/lib/validators'
+import {maxLength, minLength, email, required} from 'vuelidate/lib/validators'
 
 export default {
   name: 'Home',
@@ -73,8 +73,7 @@ export default {
       number: '',
       language: ''
     },
-    terms: false,
-    disabled: true
+    terms: false
   }),
   computed:{
     getLengthFilledFields(){
@@ -114,7 +113,7 @@ export default {
     user:{
       name: {},
       email: {email, required},
-      number: {maxLength: maxLength(11), minLength: minLength(11), numeric},
+      number: {maxLength: maxLength(11), minLength: minLength(11)},
     }
   }
 }
